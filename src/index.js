@@ -28,7 +28,7 @@ function clearMarkup() {
 function createMarkup(data) {
     if (data.length > 10) {
         clearMarkup();
-        Notify.success("Too many matches found. Please enter a more specific name.");
+        Notify.info("Too many matches found. Please enter a more specific name.");
     } else if (data.length >= 2 && data.length <= 10) {
         createMarkupCountry(data, markupManyCountry);
     } else {
