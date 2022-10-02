@@ -22,7 +22,7 @@ function onSearch(e) {
 }
 
 function clearMarkup() {
-    countryList.innerHTML = ""
+    countryList.innerHTML = "";
 }
 
 function createMarkup(data) {
