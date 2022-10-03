@@ -5,7 +5,11 @@ export default class ApiRrestCountries {
 
     fetchCountries() {
         return fetch(`https://restcountries.com/v3.1/name/${this.searchQuery}?fields=name,flags,capital,population,languages`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(response.status);
+                }
+                return response.json()})
     }
 
     get query() {
