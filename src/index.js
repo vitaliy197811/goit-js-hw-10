@@ -26,8 +26,8 @@ function clearMarkup() {
 }
 
 function createMarkup(data) {
+    clearMarkup();
     if (data.length > 10) {
-        clearMarkup();
         Notify.info("Too many matches found. Please enter a more specific name.");
     } else if (data.length >= 2 && data.length <= 10) {
         createMarkupCountry(data, markupManyCountry);
@@ -37,12 +37,10 @@ function createMarkup(data) {
 }
 
 function markupManyCountry(data) {
-    clearMarkup();
     return `<li><img src="${data.flags.svg}" alt="${data.flag}" width=40>${data.name.official}</li>`
 }
 
 function markupOneCountry(data) {
-    clearMarkup();
     return `<li>
     <img src="${data.flags.svg}" alt="${data.flag}" width=60><spam class="country-title">${data.name.official}</spam>
     <p><spam class="country-item">Capital:</spam>${data.capital}</p>
